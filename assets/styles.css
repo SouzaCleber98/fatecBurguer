@@ -17,14 +17,17 @@ body {
 header {
     position: fixed;
     background: #c3e6e6;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     padding: 10px 40px;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+}
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
 }
 
 .logo {
@@ -48,6 +51,42 @@ nav a {
     font-size: 2rem;
     margin-left: 40px;
     font-family: Arial, sans-serif;
+}
+
+.submenu {
+    display: none;
+    float: left;
+    overflow: hidden;
+}
+
+.submenu .submenubtn {
+    font-size: 2rem;
+    color: #111;
+    background-color: inherit;
+}
+
+.submenu:hover .submenubtn {
+    background-color: red;
+}
+
+
+.submenu-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    background-color: red;
+    width: 100%;
+    z-index: 1;
+}
+
+.submenu-content a {
+    float: left;
+    color: white;
+    text-decoration: none;
+}
+
+.submenu:hover .submenu-content {
+    display: block;
 }
 
 /* ======== Home ======== */
@@ -356,4 +395,220 @@ button {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
+}
+
+/* Para tablets e telas médias */
+@media (max-width: 900px) {
+
+    /* ======== Responsividade geral ======== */
+
+    .submenu {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .submenu .submenubtn {
+        font-size: 2rem;
+    }
+
+    .logo img {
+        width: 30px;
+        margin-right: 10px;
+    }
+
+    .logo span {
+        font-size: 1rem;
+    }
+
+    /* Banner */
+    .banner {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .banner-left {
+        border-right: none;
+        text-align: center;
+    }
+
+    .banner-left h1 {
+        font-size: 2.5rem;
+    }
+
+    .banner-left p {
+        font-size: 1.6rem;
+        max-width: 100%;
+    }
+
+    .banner-right {
+        margin: 0;
+        gap: 20px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .banner-btn {
+        width: 100%;
+        font-size: 2rem;
+        padding: 20px;
+    }
+
+    /* Cardápio */
+    .cardapio-container {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .item .info h3 {
+        font-size: 16px;
+    }
+
+    .item .info p {
+        font-size: 12px;
+    }
+
+    .item .price {
+        font-size: 16px;
+    }
+
+    .item .buy-button {
+        font-size: 18px;
+    }
+
+    /* Sobre */
+    .sobre-container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .text-content {
+        flex-direction: column;
+    }
+
+    .sobre-text h2 {
+        font-size: 20px;
+    }
+
+    .sobre-text p {
+        font-size: 14px;
+    }
+
+    /* Contato */
+    .contato {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .contato-container {
+        max-width: 90%;
+    }
+
+    textarea,
+    input,
+    select {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Para celulares pequenos */
+@media (max-width: 600px) {
+
+    /* Banner */
+    .banner-left h1 {
+        font-size: 2rem;
+    }
+
+    .banner-left p {
+        font-size: 1.2rem;
+    }
+
+    .banner-btn {
+        font-size: 1.6rem;
+        padding: 15px;
+    }
+
+    /* Cardápio */
+    .cardapio-container {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    .item .info h3 {
+        font-size: 14px;
+    }
+
+    .item .info p {
+        font-size: 12px;
+    }
+
+    .item .price {
+        font-size: 14px;
+    }
+
+    .item .buy-button {
+        font-size: 16px;
+        height: 50px;
+    }
+
+    /* Sobre */
+
+    .sobre-image img {
+        height: 250px;
+    }
+
+    /* Contato */
+    .contato {
+        width: 95%;
+        padding: 10px;
+    }
+
+    textarea,
+    input,
+    select {
+        font-size: 12px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+
+/* Para celulares muito pequenos */
+@media (max-width: 400px) {
+    .logo span {
+        font-size: 0.8rem;
+    }
+
+    nav a {
+        font-size: 1.5rem;
+        margin-left: 20px;
+    }
+
+    .banner-left h1 {
+        font-size: 1.8rem;
+    }
+
+    .banner-left p {
+        font-size: 1rem;
+    }
+
+    .banner-btn {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
 }
