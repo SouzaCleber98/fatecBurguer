@@ -46,9 +46,9 @@ header {
 }
 
 .logo img:hover {
-  transform: scale(1.1);
-  transition: transform 0.7s ease;
-  transform: rotate(360deg);
+    transform: scale(1.1);
+    transition: transform 0.7s ease;
+    transform: rotate(360deg);
 }
 
 nav a {
@@ -96,12 +96,15 @@ nav a {
 }
 
 /* ======== Home ======== */
-.carousel, 
-.carousel-item, 
+.carousel,
+.carousel-item,
 .carousel-item img {
-  user-select: none;   /* padrão */
-  -webkit-user-select: none; /* Safari/Chrome */
-  -ms-user-select: none;     /* IE/Edge antigo */
+    user-select: none;
+    /* padrão */
+    -webkit-user-select: none;
+    /* Safari/Chrome */
+    -ms-user-select: none;
+    /* IE/Edge antigo */
 }
 
 .carousel {
@@ -182,6 +185,12 @@ nav a {
     font-family: Arial, sans-serif;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: background 0.2s;
+}
+
+.banner-btn a {
+    text-decoration: none;
+    color: #111;
+    font-size: 3rem;
 }
 
 .banner-btn:hover {
@@ -469,6 +478,10 @@ button {
         padding: 20px;
     }
 
+    .banner-btn a {
+        font-size: 2rem;
+    }
+
     /* Cardápio */
     .cardapio-container {
         gap: 15px;
@@ -553,6 +566,10 @@ button {
         padding: 15px;
     }
 
+    .banner-btn a {
+        font-size: 1.6rem;
+    }
+
     /* Cardápio */
     .cardapio-container {
         grid-template-columns: 1fr;
@@ -623,5 +640,9 @@ button {
     .banner-btn {
         font-size: 1.2rem;
         padding: 10px;
+    }
+
+    .banner-btn a {
+        font-size: 1.2rem;
     }
 }
