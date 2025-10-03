@@ -24,7 +24,6 @@ header {
     z-index: 1000;
 }
 
-
 .header {
     display: flex;
     justify-content: space-between;
@@ -75,7 +74,6 @@ nav a {
     background-color: red;
 }
 
-
 .submenu-content {
     display: none;
     position: absolute;
@@ -91,7 +89,7 @@ nav a {
     text-decoration: none;
 }
 
-.submenu:hover .submenu-content {
+.submenu-content.active {
     display: block;
 }
 
