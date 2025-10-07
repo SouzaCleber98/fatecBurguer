@@ -120,6 +120,11 @@ header {
     justify-content: space-between;
 }
 
+.nav-container {
+    display: flex;
+    gap: 30px;
+}
+
 .logo {
     display: flex;
     align-items: center;
