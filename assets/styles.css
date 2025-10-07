@@ -2,11 +2,13 @@
 :root {
     --background-color: 157, 202, 235;
     --secondary-background-color: 214, 204, 204;
+    --green-background-color: 0, 105, 0;
+    --red-background-color: 105, 0, 0;
     --hover-color: 141, 209, 209;
     --sub-menu-color: 255, 99, 71;
     --default-text-color: 0, 0, 0;
     --secondary-text-color: 238, 236, 236;
-    --background-image: url('./img/fatec.jpg');
+    --background-image: url('./img/fatecDay.jpg');
 }
 
 * {
@@ -31,62 +33,62 @@ body.dark-mode {
     --sub-menu-color: 255, 99, 71;
     --default-text-color: 224, 224, 224;
     --secondary-text-color: 17, 17, 17;
-    --background-image: url('./img/fatec.jpg');
+    --background-image: url('./img/fatecNight.jpg');
 }
 
 /* Toggle vertical estilo "linha" */
 #darkModeToggle {
-  --size: 58px;
-  --width: 40px;
-  --knob-size: 34px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 6px;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  height: var(--size);
-  width: var(--width);
-  border-radius: 999px;
-  position: relative;
+    --size: 58px;
+    --width: 40px;
+    --knob-size: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    height: var(--size);
+    width: var(--width);
+    border-radius: 999px;
+    position: relative;
 }
 
 /* track */
 .dark-toggle-track {
-  display: block;
-  width: var(--width);
-  height: var(--size);
-  background: rgba(0,0,0,0.08);
-  border-radius: calc(var(--width)/2);
-  position: relative;
-  overflow: visible;
+    display: block;
+    width: var(--width);
+    height: var(--size);
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: calc(var(--width)/2);
+    position: relative;
+    overflow: visible;
 }
 
 /* knob */
 .dark-toggle-knob {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 6px;
-  width: var(--knob-size);
-  height: var(--knob-size);
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
-  transition: top .28s cubic-bezier(.2,.9,.2,1), background .25s ease, box-shadow .25s ease;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='5' fill='%23FFDD57'/></svg>");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 60%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 6px;
+    width: var(--knob-size);
+    height: var(--knob-size);
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+    transition: top .28s cubic-bezier(.2, .9, .2, 1), background .25s ease, box-shadow .25s ease;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='5' fill='%23FFDD57'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
 }
 
 /* estado dark-mode */
 body.dark-mode .dark-toggle-knob {
-  top: calc(100% - var(--knob-size) - 6px);
-  background: #222;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%239BD1FF' d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/></svg>");
+    top: calc(100% - var(--knob-size) - 6px);
+    background: #222;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%239BD1FF' d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/></svg>");
 }
 
 /* ======== toast ======== */
@@ -138,7 +140,7 @@ header {
     transition: transform 0.7s ease;
 }
 
-nav.menu {
+.menu {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -301,7 +303,7 @@ nav a {
     padding: 20px;
     max-width: 1200px;
     margin: auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(var(--secondary-background-color), 0.9);
     border-radius: 10px;
 }
 
@@ -309,7 +311,7 @@ nav a {
     position: relative;
     border-radius: 10px;
     overflow: hidden;
-    background-color: #90cad1;
+    background-color: rgba(var(--background-color));
 }
 
 .item img {
@@ -333,8 +335,8 @@ nav a {
 }
 
 .item .price {
-    background-color: #4CAF50;
-    color: white;
+    background-color: rgba(var(--green-background-color), 0.9);
+    color: rgb(var(--default-text-color));
     font-size: 18px;
     padding: 10px;
     text-align: center;
@@ -346,8 +348,8 @@ nav a {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(76, 175, 80, 0.95);
-    color: white;
+    background-color: rgba(var(--green-background-color), 0.9);
+    color: rgb(var(--default-text-color));
     font-size: 20px;
     display: flex;
     justify-content: center;
@@ -359,7 +361,7 @@ nav a {
 }
 
 .item:hover {
-    background-color: #4c6f73;
+    background-color: rgba(var(--hover-color));
 }
 
 
@@ -374,11 +376,11 @@ nav a {
 /* ======== About ======== */
 .sobre-container {
     display: flex;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgb(var(--secondary-background-color), 0.9);
     border-radius: 10px;
     width: 70%;
     margin: auto;
-    color: #f2eeee;
+    color: rgb(var(--default-text-color));
 }
 
 .sobre-content {
@@ -401,8 +403,12 @@ nav a {
 
 .sobre-text h2 {
     font-size: 24px;
-    border-bottom: 2px solid #4CAF50;
+    border-bottom: 2px solid rgba(var(--green-background-color));
     margin-bottom: 20px;
+}
+
+.text-content img {
+    height: 600px;
 }
 
 .sobre-text p {
@@ -420,8 +426,6 @@ nav a {
 .sobre-image img {
     width: 100%;
     height: 400px;
-    border-radius: 5px;
-    object-fit: cover;
     margin-bottom: 20px;
 }
 
@@ -436,9 +440,9 @@ nav a {
     flex-direction: column;
     margin: 20px auto;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgb(var(--secondary-background-color), 0.9);
     border-radius: 10px;
-    color: #e8e0e0;
+    color: rgb(var(--default-text-color));
 }
 
 
@@ -447,7 +451,7 @@ input,
 select {
     padding: 10px;
     margin-bottom: 10px;
-    border: 5px solid #9ee7f0;
+    border: 5px solid rgb(var(--background-color));
     border-radius: 4px;
 }
 
@@ -474,13 +478,13 @@ button {
 }
 
 .cancelar {
-    background-color: #d9534f;
-    color: #fff;
+    background-color: rgba(var(--red-background-color), 0.9);
+    color: rgb(var(--secondary-text-color));
 }
 
 .enviar {
-    background-color: #5cb85c;
-    color: #fff;
+    background-color: rgba(var(--green-background-color), 0.9);
+    color: rgb(var(--secondary-text-color));
 }
 
 .mapa iframe {
@@ -507,7 +511,7 @@ button {
 
 .contato-container h2 {
     font-size: 24px;
-    border-bottom: 2px solid #4CAF50;
+    border-bottom: 2px solid rgba(var(--green-background-color));
     margin-bottom: 20px;
 }
 
@@ -523,7 +527,7 @@ button {
     /* ======== Responsividade geral ======== */
 
     .submenu {
-        display: block;
+        display: flex;
     }
 
     .menu {
@@ -610,6 +614,10 @@ button {
 
     .text-content {
         flex-direction: column;
+    }
+
+    .text-content img {
+        height: 250px;
     }
 
     .sobre-text h2 {
