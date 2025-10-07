@@ -179,6 +179,7 @@ nav a {
 .submenu-content {
     display: none;
     position: absolute;
+    top: 90%;
     left: 0;
     background-color: rgba(var(--sub-menu-color), 0.95);
     width: 100%;
