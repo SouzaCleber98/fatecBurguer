@@ -1,3 +1,5 @@
+import generateToast from "./toast.js";
+
 window.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('.fale-conosco form');
     const btnCancelar = form.querySelector('.cancelar');
@@ -16,7 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
         if (!confirm('Tem certeza que deseja cancelar e limpar os campos?')) return;
 
         limparCampos();
-        alert('Campos limpos com sucesso!');
+        generateToast('Formulário limpo com sucesso!');
 
     });
 
@@ -27,8 +29,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
         if (!confirm('Deseja realmente enviar a mensagem?')) return;
 
-        alert('Mensagem enviada com sucesso!');
         limparCampos();
+        generateToast('Mensagem enviada com sucesso!');
 
     });
 });

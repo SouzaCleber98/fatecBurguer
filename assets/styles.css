@@ -14,8 +14,20 @@ body {
     padding-top: 80px;
 }
 
-/* ======== header ======== */
+/* ======== toast ======== */
+.toast {
+    position: fixed;
+    transform: translateX(-50%);
+    bottom: 30px;
+    left: 50%;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 9999;
+}
 
+/* ======== header ======== */
 header {
     position: fixed;
     background: #c3e6e6;
