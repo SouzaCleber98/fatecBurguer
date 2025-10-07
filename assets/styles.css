@@ -1,4 +1,13 @@
 /* ======== Global ======== */
+:root {
+    --background-color: 157, 202, 235;
+    --secondary-background-color: 214, 204, 204;
+    --hover-color: 141, 209, 209;
+    --sub-menu-color: 255, 99, 71;
+    --default-text-color: 0, 0, 0;
+    --secondary-text-color: 238, 236, 236;
+    --background-image: url('./img/fatec.jpg');
+}
 
 * {
     box-sizing: border-box;
@@ -7,11 +16,77 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('./img/fatec.jpg');
+    background-image: var(--background-image);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     padding-top: 80px;
+}
+
+/* Dark-Mode */
+body.dark-mode {
+    --background-color: 38, 5, 129;
+    --secondary-background-color: 39, 35, 35;
+    --hover-color: 38, 60, 129;
+    --sub-menu-color: 255, 99, 71;
+    --default-text-color: 224, 224, 224;
+    --secondary-text-color: 17, 17, 17;
+    --background-image: url('./img/fatec.jpg');
+}
+
+/* Toggle vertical estilo "linha" */
+#darkModeToggle {
+  --size: 58px;
+  --width: 40px;
+  --knob-size: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  height: var(--size);
+  width: var(--width);
+  border-radius: 999px;
+  position: relative;
+}
+
+/* track */
+.dark-toggle-track {
+  display: block;
+  width: var(--width);
+  height: var(--size);
+  background: rgba(0,0,0,0.08);
+  border-radius: calc(var(--width)/2);
+  position: relative;
+  overflow: visible;
+}
+
+/* knob */
+.dark-toggle-knob {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6px;
+  width: var(--knob-size);
+  height: var(--knob-size);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+  transition: top .28s cubic-bezier(.2,.9,.2,1), background .25s ease, box-shadow .25s ease;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='5' fill='%23FFDD57'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+/* estado dark-mode */
+body.dark-mode .dark-toggle-knob {
+  top: calc(100% - var(--knob-size) - 6px);
+  background: #222;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%239BD1FF' d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/></svg>");
 }
 
 /* ======== toast ======== */
@@ -20,8 +95,8 @@ body {
     transform: translateX(-50%);
     bottom: 30px;
     left: 50%;
-    background-color: #333;
-    color: white;
+    background-color: rgb(var(--secondary-background-color));
+    color: rgb(var(--default-text-color));
     padding: 10px 20px;
     border-radius: 5px;
     z-index: 9999;
@@ -30,7 +105,7 @@ body {
 /* ======== header ======== */
 header {
     position: fixed;
-    background: #c3e6e6;
+    background: rgb(var(--background-color));
     padding: 10px 40px;
     top: 0;
     left: 0;
@@ -59,19 +134,25 @@ header {
 }
 
 .logo img:hover {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(360deg);
     transition: transform 0.7s ease;
-    transform: rotate(360deg);
+}
+
+nav.menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 30px;
 }
 
 nav a {
     text-decoration: none;
-    color: #111;
+    color: rgb(var(--secondary-text-color));
     font-size: 2rem;
-    margin-left: 40px;
     font-family: Arial, sans-serif;
 }
 
+/* ======== Submenu (mobile) ======== */
 .submenu {
     display: none;
     float: left;
@@ -80,43 +161,44 @@ nav a {
 
 .submenu .submenubtn {
     font-size: 2rem;
-    color: #111;
-    background-color: inherit;
+    color: rgb(var(--secondary-text-color));
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
 
 .submenu-content {
     display: none;
     position: absolute;
     left: 0;
-    background-color: red;
+    background-color: rgba(var(--sub-menu-color), 0.95);
     width: 100%;
     z-index: 1;
 }
 
 .submenu-content a {
     float: left;
-    color: white;
+    color: rgb(var(--default-text-color));
     text-decoration: none;
+    padding: 12px 16px;
 }
 
 .submenu-content.active {
     display: flex;
+    flex-direction: column;
 }
 
 .submenubtn.active {
-    background-color: red;
+    background-color: rgba(var(--sub-menu-color), 0.95);
 }
 
-/* ======== Home ======== */
+/* ======== Home / Carousel ======== */
 .carousel,
 .carousel-item,
 .carousel-item img {
     user-select: none;
-    /* padrão */
     -webkit-user-select: none;
-    /* Safari/Chrome */
     -ms-user-select: none;
-    /* IE/Edge antigo */
 }
 
 .carousel {
@@ -129,8 +211,7 @@ nav a {
 .carousel-item {
     flex: 0 0 auto;
     border-radius: 30px;
-    border: 6px solid #8ee0e0;
-    background: #fff;
+    border: 6px solid rgb(var(--background-color));
     padding: 0;
 }
 
@@ -147,8 +228,9 @@ nav a {
     display: none;
 }
 
+/* ======== Banner ======== */
 .banner {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgb(var(--secondary-background-color), 0.9);
     display: flex;
     justify-content: space-around;
     padding: 40px;
@@ -162,8 +244,9 @@ nav a {
 }
 
 .banner-left {
-    color: #fff;
-    border-right: 10px solid #8ee0e0;
+    color: rgb(var(--default-text-color));
+    border-right: 10px solid rgb(var(--background-color));
+    padding-right: 20px;
 }
 
 .banner-left h1 {
@@ -186,8 +269,8 @@ nav a {
 }
 
 .banner-btn {
-    background: #b6f6fb;
-    color: #111;
+    background-color: rgb(var(--background-color));
+    color: rgb(var(--secondary-text-color));
     font-size: 3rem;
     width: 350px;
     border: none;
@@ -195,18 +278,19 @@ nav a {
     padding: 25px 60px;
     cursor: pointer;
     font-family: Arial, sans-serif;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    transition: background 0.2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .banner-btn a {
     text-decoration: none;
-    color: #111;
+    color: inherit;
     font-size: 3rem;
 }
 
 .banner-btn:hover {
-    background: #8ee0e0;
+    background-color: rgba(var(--hover-color), 0.9);
 }
 
 /* ======== Menu ======== */
@@ -634,6 +718,12 @@ button {
 
 /* Para celulares muito pequenos */
 @media (max-width: 400px) {
+    .dark-toggle {
+        --size: 48px;
+        --width: 34px;
+        --knob-size: 28px;
+    }
+
     .logo span {
         font-size: 0.8rem;
     }
