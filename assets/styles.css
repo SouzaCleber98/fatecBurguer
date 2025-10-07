@@ -14,6 +14,8 @@ body {
     padding-top: 80px;
 }
 
+/* ======== header ======== */
+
 header {
     position: fixed;
     background: #c3e6e6;
@@ -70,10 +72,6 @@ nav a {
     background-color: inherit;
 }
 
-.submenu:hover .submenubtn {
-    background-color: red;
-}
-
 .submenu-content {
     display: none;
     position: absolute;
@@ -90,7 +88,11 @@ nav a {
 }
 
 .submenu-content.active {
-    display: block;
+    display: flex;
+}
+
+.submenubtn.active {
+    background-color: red;
 }
 
 /* ======== Home ======== */
