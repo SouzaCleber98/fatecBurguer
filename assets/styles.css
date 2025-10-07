@@ -2,6 +2,7 @@
 :root {
     --background-color: 157, 202, 235;
     --secondary-background-color: 214, 204, 204;
+    --toast-background-color: 39, 35, 35;
     --green-background-color: 0, 105, 0;
     --red-background-color: 105, 0, 0;
     --hover-color: 141, 209, 209;
@@ -29,6 +30,7 @@ body {
 body.dark-mode {
     --background-color: 38, 5, 129;
     --secondary-background-color: 39, 35, 35;
+    --toast-background-color: 214, 204, 204;
     --hover-color: 38, 60, 129;
     --sub-menu-color: 255, 99, 71;
     --default-text-color: 224, 224, 224;
@@ -97,8 +99,8 @@ body.dark-mode .dark-toggle-knob {
     transform: translateX(-50%);
     bottom: 30px;
     left: 50%;
-    background-color: rgb(var(--secondary-background-color));
-    color: rgb(var(--default-text-color));
+    background-color: rgb(var(--toast-background-color));
+    color: rgb(var(--secondary-text-color));
     padding: 10px 20px;
     border-radius: 5px;
     z-index: 9999;
