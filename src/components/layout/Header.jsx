@@ -1,9 +1,16 @@
 import { useState } from "react";
 import Logo from "../ui/Logo"
+import NavLink from "../ui/NavLink";
 import DarkModeSwitcher from "../ui/DarkModeSwitcher";
 
-function Header() {
+const navLinks = [
+  { href: "/", label: "Home" },
+  { href: "/menu", label: "Cardápio" },
+  { href: "/about", label: "Sobre" },
+  { href: "/contact", label: "Contato" },
+];
 
+function Header() {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const toggleMenuVisibility = () => {
@@ -20,18 +27,12 @@ function Header() {
               onClick={toggleMenuVisibility}>☰
             </button>
             <nav className={`submenu-content ${isMenuVisible ? "active" : ""}`}>
-              <a href="#">Home</a>
-              <a href="menu.html">Cardápio</a>
-              <a href="about.html">Sobre</a>
-              <a href="contact.html">Contato</a>
+              <NavLink links={navLinks} />
             </nav>
           </div>
 
           <nav className="menu">
-            <a href="#">Home</a>
-            <a href="menu.html">Cardápio</a>
-            <a href="about.html">Sobre</a>
-            <a href="contact.html">Contato</a>
+            <NavLink links={navLinks} />
           </nav>
 
           <DarkModeSwitcher />
