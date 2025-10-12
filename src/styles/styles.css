@@ -40,7 +40,7 @@ body.dark-mode {
 
 /* Toggle vertical estilo "linha" */
 #darkModeToggle {
-    --size: 58px;
+    --size: 60px;
     --width: 40px;
     --knob-size: 34px;
     display: inline-flex;
@@ -280,6 +280,7 @@ nav a {
 
 .banner-btn {
     background-color: rgb(var(--background-color));
+    text-decoration: none;
     color: rgb(var(--secondary-text-color));
     font-size: 3rem;
     width: 350px;
@@ -291,12 +292,6 @@ nav a {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-}
-
-.banner-btn a {
-    text-decoration: none;
-    color: inherit;
-    font-size: 3rem;
 }
 
 .banner-btn:hover {

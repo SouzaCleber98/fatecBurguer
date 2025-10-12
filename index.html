@@ -5,99 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FatecBurguer</title>
-    <link rel="stylesheet" href="./assets/styles.css">
     <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/3075/3075977.png">
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="header">
-            <div class="logo">
-                <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Logo">
-                <span>FatecBurguer</span>
-            </div>
+    <div id="root"></div>
 
-            <div class="nav-container">
-                <div class="submenu">
-                    <button class="submenubtn">☰</button>
-                    <nav class="submenu-content">
-                        <a href="#">Home</a>
-                        <a href="menu.html">Cardápio</a>
-                        <a href="about.html">Sobre</a>
-                        <a href="contact.html">Contato</a>
-                    </nav>
-                </div>
-
-                <nav class="menu">
-                    <a href="#">Home</a>
-                    <a href="menu.html">Cardápio</a>
-                    <a href="about.html">Sobre</a>
-                    <a href="contact.html">Contato</a>
-                </nav>
-
-                <button id="darkModeToggle" title="Alternar modo escuro">
-                    <span class="dark-toggle-track">
-                        <span class="dark-toggle-knob"></span>
-                    </span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <div class="carousel">
-        <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-                alt="Hamburguer 1">
-        </div>
-        <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-                alt="Hamburguer 2">
-        </div>
-        <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-                alt="Sanduíche 3">
-        </div>
-        <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-                alt="Sanduíche 4">
-        </div>
-        <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-                alt="Sanduíche 5">
-        </div>
-        <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-                alt="Sanduíche 6">
-        </div>
-        <div class="carousel-item">
-            <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80"
-                alt="Sanduíche 7">
-        </div>
-
-    </div>
-
-    <section class="banner">
-        <div class="banner-content">
-            <div class="banner-left">
-                <h1>Bem Vindo!</h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dignissim eu diam suscipit hendrerit.
-                    In porta feugiat risus at posuere. Aenean posuere, sapien nec porta feugiat, lorem lectus
-                    condimentum justo, in laoreet libero turpis vel ante. Donec magna leo, ultricies sed lacus et, porta
-                    convallis odio. Donec dictum cursus urna at lacinia.
-                </p>
-            </div>
-            <div class="banner-right">
-                <button class="banner-btn">Entrar</button>
-                <button class="banner-btn"><a href="menu.html">Cardápio</a></button>
-            </div>
-        </div>
-    </section>
-
-    <script src="./assets/js/indexCarousel.js"></script>
-    <script src="./assets/js/headerMobileMenu.js"></script>
-    <script src="./assets/js/darkModeToggle.js"></script>
+    <script type="module" src="./src/main.jsx"></script>
 </body>
 
 </html>
