@@ -1,6 +1,7 @@
+import { useEffect } from "react";
 import Header from "../components/layout/Header";
-import Carousel from "../components/ui/Carousel";
-import Banner from "../components/ui/Banner";
+import Carousel from "../components/layout/Carousel";
+import Banner from "../components/layout/Banner";
 
 const images = [
     "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80",
@@ -9,12 +10,16 @@ const images = [
 ];
 
 function Home() {
+    useEffect(() => {
+        document.title = "Fatec Burguer";
+    }, []);
+
     return (
-        <div>
+        <>
             <Header />
-            <Carousel images={images } />
+            <Carousel images={images} />
             <Banner />
-        </div>
+        </>
     );
 }
 
