@@ -1,4 +1,4 @@
-function Banner() {
+function HomeBanner() {
   return (
     <section className="banner">
       <div className="banner-content">
@@ -21,4 +21,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default HomeBanner;
