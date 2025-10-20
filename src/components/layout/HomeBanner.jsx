@@ -14,7 +14,7 @@ function HomeBanner() {
         
         <div className="banner-right">
           <a href="#" className="banner-btn">Entrar</a>
-          <a href="menu.html" className="banner-btn">Cardápio</a>
+          <a href="/menu" className="banner-btn">Cardápio</a>
         </div>
       </div>
     </section>
