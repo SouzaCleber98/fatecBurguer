@@ -1,9 +1,42 @@
 /* ======== Custom Variables ======== */
 :root {
+  /* Light Mode Custom Colors */
   --primary-color: rgb(157, 202, 235);
   --secondary-bg-color: rgba(214, 204, 204, 0.9);
   --hover-color: rgb(141, 209, 209);
   --background-image: url("../assets/images/fatecDay.jpg");
+
+  /* Bootstrap Color Overrides for Light Mode */
+  --bs-primary: #9dcaeb;
+  --bs-primary-rgb: 157, 202, 235;
+  --bs-secondary: #d6cccc;
+  --bs-secondary-rgb: 214, 204, 204;
+  --bs-body-bg: #ffffff;
+  --bs-body-color: #212529;
+  --bs-link-color: #9dcaeb;
+  --bs-link-hover-color: #8dd1d1;
+}
+
+/* Dark Mode Variables */
+[data-bs-theme="dark"] {
+  /* Dark Mode Custom Colors */
+  --primary-color: rgb(38, 5, 129);
+  --secondary-bg-color: rgba(39, 35, 35, 0.9);
+  --hover-color: rgb(38, 60, 129);
+  --background-image: url("../assets/images/fatecNight.jpg");
+
+  /* Bootstrap Color Overrides for Dark Mode */
+  --bs-primary: #260581;
+  --bs-primary-rgb: 38, 5, 129;
+  --bs-secondary: #272323;
+  --bs-secondary-rgb: 39, 35, 35;
+  --bs-body-bg: #1a1a2e;
+  --bs-body-color: #e0e0e0;
+  --bs-link-color: #7d7aff;
+  --bs-link-hover-color: #263c81;
+  --bs-border-color: #404040;
+  --bs-card-bg: rgba(39, 35, 35, 0.95);
+  --bs-card-border-color: var(--primary-color);
 }
 
 /* ======== Global Styles ======== */
@@ -32,40 +65,32 @@ body {
 }
 
 /* ======== Dark Mode ======== */
-/* Dark Mode Variables */
-body.dark-mode {
-  --primary-color: rgb(38, 5, 129);
-  --secondary-bg-color: rgba(39, 35, 35, 0.9);
-  --hover-color: rgb(38, 60, 129);
-  --background-image: url("../assets/images/fatecNight.jpg");
-}
-
 /* Dark Mode Body */
-body.dark-mode {
+[data-bs-theme="dark"] body {
   background-color: #1a1a2e;
   color: #e0e0e0;
 }
 
-/* Bootstrap Overrides for Dark Mode */
-body.dark-mode .navbar {
+/* Bootstrap Component Overrides for Dark Mode */
+[data-bs-theme="dark"] .navbar {
   background-color: var(--primary-color) !important;
 }
 
-body.dark-mode .card {
+[data-bs-theme="dark"] .card {
+  background-color: var(--bs-card-bg);
+  color: #e0e0e0;
+  border-color: var(--bs-card-border-color);
+}
+
+[data-bs-theme="dark"] .form-control,
+[data-bs-theme="dark"] .form-select {
   background-color: rgba(39, 35, 35, 0.95);
   color: #e0e0e0;
   border-color: var(--primary-color);
 }
 
-body.dark-mode .form-control,
-body.dark-mode .form-select {
-  background-color: rgba(39, 35, 35, 0.95);
-  color: #e0e0e0;
-  border-color: var(--primary-color);
-}
-
-body.dark-mode .form-control:focus,
-body.dark-mode .form-select:focus {
+[data-bs-theme="dark"] .form-control:focus,
+[data-bs-theme="dark"] .form-select:focus {
   background-color: rgba(39, 35, 35, 0.95);
   color: #e0e0e0;
   border-color: var(--hover-color);
@@ -118,7 +143,7 @@ body.dark-mode .form-select:focus {
   background-size: 60%;
 }
 
-body.dark-mode .dark-toggle-knob {
+[data-bs-theme="dark"] .dark-toggle-knob {
   top: calc(100% - var(--knob-size) - 6px);
   background: #222;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
@@ -150,7 +175,7 @@ body.dark-mode .dark-toggle-knob {
   color: #111 !important;
 }
 
-body.dark-mode .custom-navbar .navbar-brand {
+[data-bs-theme="dark"] .custom-navbar .navbar-brand {
   color: #e0e0e0 !important;
 }
 
@@ -160,7 +185,7 @@ body.dark-mode .custom-navbar .navbar-brand {
   transition: color 0.3s ease;
 }
 
-body.dark-mode .custom-navbar .nav-link-custom {
+[data-bs-theme="dark"] .custom-navbar .nav-link-custom {
   color: #e0e0e0 !important;
 }
 
@@ -172,7 +197,7 @@ body.dark-mode .custom-navbar .nav-link-custom {
   border-color: rgba(0, 0, 0, 0.3);
 }
 
-body.dark-mode .custom-navbar .navbar-toggler {
+[data-bs-theme="dark"] .custom-navbar .navbar-toggler {
   border-color: rgba(255, 255, 255, 0.3);
 }
 
@@ -196,7 +221,7 @@ body.dark-mode .custom-navbar .navbar-toggler {
   border-color: var(--hover-color) !important;
 }
 
-body.dark-mode .btn-banner {
+[data-bs-theme="dark"] .btn-banner {
   color: #e0e0e0 !important;
 }
 

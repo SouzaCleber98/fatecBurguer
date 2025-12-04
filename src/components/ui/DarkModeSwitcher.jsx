@@ -1,27 +1,14 @@
-import { useState, useEffect } from "react";
-import {
-  getDarkModeStatus,
-  setDarkModeInLocalStorage,
-  updateDarkModeClass,
-} from "../../utils/darkMode.js";
+import { useTheme } from "../../context/ThemeContext";
 
 function DarkModeSwitcher() {
-  const [darkMode, setDarkMode] = useState(getDarkModeStatus());
-
-  useEffect(() => {
-    setDarkModeInLocalStorage(darkMode);
-    updateDarkModeClass(darkMode);
-  }, [darkMode]);
-
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
+  const { toggleTheme } = useTheme();
 
   return (
     <button
       id="darkModeToggle"
-      onClick={toggleDarkMode}
+      onClick={toggleTheme}
       title="Alternar modo escuro"
+      aria-label="Alternar modo escuro"
     >
       <span className="dark-toggle-track">
         <span className="dark-toggle-knob"></span>
