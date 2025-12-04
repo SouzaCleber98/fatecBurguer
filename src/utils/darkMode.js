@@ -20,8 +20,8 @@
  * @see localStorage.getItem
  */
 export function getDarkModeStatus() {
-  const darkModeStorageKey = 'darkMode';
-  const isDarkModeSet = localStorage.getItem(darkModeStorageKey) === 'enabled';
+  const darkModeStorageKey = "darkMode";
+  const isDarkModeSet = localStorage.getItem(darkModeStorageKey) === "enabled";
 
   return isDarkModeSet;
 }
@@ -30,8 +30,8 @@ export function getDarkModeStatus() {
  * Saves the user's dark mode preference in localStorage.
  *
  * This function stores the user's theme setting under the "darkMode" key in localStorage.
- * If `isDarkModeEnabled` is `true`, the value saved will be "enabled"; 
- * if `false`, it will be "disabled". This allows the application to retrieve 
+ * If `isDarkModeEnabled` is `true`, the value saved will be "enabled";
+ * if `false`, it will be "disabled". This allows the application to retrieve
  * this setting later and automatically apply the correct theme.
  *
  * @param {boolean} isDarkModeEnabled - Indicates whether dark mode is enabled (`true`) or disabled (`false`).
@@ -52,9 +52,9 @@ export function setDarkModeInLocalStorage(isDarkModeEnabled) {
 /**
  * Toggles the "dark-mode" class on the document body based on the provided flag.
  *
- * This function adds or removes the "dark-mode" CSS class on the `<body>` element 
- * depending on the value of `isDarkModeEnabled`. When the class is present, 
- * the dark mode styles defined in CSS will be applied; when removed, the page 
+ * This function adds or removes the "dark-mode" CSS class on the `<body>` element
+ * depending on the value of `isDarkModeEnabled`. When the class is present,
+ * the dark mode styles defined in CSS will be applied; when removed, the page
  * will revert to the light mode styles.
  *
  * @param {boolean} isDarkModeEnabled - Indicates whether dark mode is enabled (`true`) or disabled (`false`).
@@ -72,5 +72,3 @@ export function setDarkModeInLocalStorage(isDarkModeEnabled) {
 export function updateDarkModeClass(isDarkModeEnabled) {
   document.body.classList.toggle("dark-mode", isDarkModeEnabled);
 }
-
-
