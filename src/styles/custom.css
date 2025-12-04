@@ -6,12 +6,20 @@
   --background-image: url("../assets/images/fatecDay.jpg");
 }
 
-/* Dark Mode Variables */
-body.dark-mode {
-  --primary-color: rgb(38, 5, 129);
-  --secondary-bg-color: rgba(39, 35, 35, 0.9);
-  --hover-color: rgb(38, 60, 129);
-  --background-image: url("../assets/images/fatecNight.jpg");
+/* ======== Global Styles ======== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 80px;
+  min-height: 100vh;
 }
 
 /* ======== Custom Background Classes ======== */
@@ -23,31 +31,13 @@ body.dark-mode {
   background-color: var(--primary-color) !important;
 }
 
-/* ======== Logo Specific Styles ======== */
-.logo-image {
-  width: 50px;
-  transition: transform 0.7s ease;
-}
-
-.logo-image:hover {
-  transform: scale(1.1) rotate(360deg);
-}
-
-/* ======== Global Styles ======== */
-* {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-image: var(--background-image);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  padding-top: 80px;
-  min-height: 100vh;
+/* ======== Dark Mode ======== */
+/* Dark Mode Variables */
+body.dark-mode {
+  --primary-color: rgb(38, 5, 129);
+  --secondary-bg-color: rgba(39, 35, 35, 0.9);
+  --hover-color: rgb(38, 60, 129);
+  --background-image: url("../assets/images/fatecNight.jpg");
 }
 
 /* Dark Mode Body */
@@ -56,7 +46,7 @@ body.dark-mode {
   color: #e0e0e0;
 }
 
-/* ======== Bootstrap Overrides for Dark Mode ======== */
+/* Bootstrap Overrides for Dark Mode */
 body.dark-mode .navbar {
   background-color: var(--primary-color) !important;
 }
@@ -82,46 +72,7 @@ body.dark-mode .form-select:focus {
   box-shadow: 0 0 0 0.25rem rgba(38, 60, 129, 0.25);
 }
 
-/* ======== Custom Navbar Styles ======== */
-.custom-navbar {
-  background-color: var(--primary-color) !important;
-}
-
-.custom-navbar .navbar-brand {
-  display: flex;
-  align-items: center;
-  font-family: "Indie Flower", cursive;
-  font-size: 1.5rem;
-  color: #111 !important;
-}
-
-body.dark-mode .custom-navbar .navbar-brand {
-  color: #e0e0e0 !important;
-}
-
-.custom-navbar .nav-link-custom {
-  font-size: 1.1rem;
-  color: #111 !important;
-  transition: color 0.3s ease;
-}
-
-body.dark-mode .custom-navbar .nav-link-custom {
-  color: #e0e0e0 !important;
-}
-
-.custom-navbar .nav-link-custom:hover {
-  color: var(--hover-color) !important;
-}
-
-.custom-navbar .navbar-toggler {
-  border-color: rgba(0, 0, 0, 0.3);
-}
-
-body.dark-mode .custom-navbar .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-/* ======== Dark Mode Toggle ======== */
+/*  Dark Mode Toggle */
 #darkModeToggle {
   --size: 60px;
   --width: 40px;
@@ -174,6 +125,57 @@ body.dark-mode .dark-toggle-knob {
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%239BD1FF' d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/></svg>");
 }
 
+/* ================================= */
+
+/* ======== Logo Specific Styles ======== */
+.logo-image {
+  width: 50px;
+  transition: transform 0.7s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.1) rotate(360deg);
+}
+
+/* ======== Custom Navbar Styles ======== */
+.custom-navbar {
+  background-color: var(--primary-color) !important;
+}
+
+.custom-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-family: "Indie Flower", cursive;
+  font-size: 1.5rem;
+  color: #111 !important;
+}
+
+body.dark-mode .custom-navbar .navbar-brand {
+  color: #e0e0e0 !important;
+}
+
+.custom-navbar .nav-link-custom {
+  font-size: 1.1rem;
+  color: #111 !important;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .custom-navbar .nav-link-custom {
+  color: #e0e0e0 !important;
+}
+
+.custom-navbar .nav-link-custom:hover {
+  color: var(--hover-color) !important;
+}
+
+.custom-navbar .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .custom-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
 /* ======== Banner Specific Styles ======== */
 .banner-border-custom {
   border-color: var(--primary-color) !important;
@@ -220,6 +222,10 @@ body.dark-mode .btn-banner {
   object-fit: cover;
 }
 
+.location-map {
+  height: 400px;
+}
+
 /* ======== Page Sections ======== */
 
 .sobre-text h2 {
@@ -227,9 +233,6 @@ body.dark-mode .btn-banner {
 }
 
 /* ======== Responsive Styles ======== */
-@media (max-width: 992px) {
-  /* Banner responsive styles now handled by Bootstrap breakpoints */
-}
 
 @media (max-width: 768px) {
   body {
@@ -246,5 +249,12 @@ body.dark-mode .btn-banner {
 
   .custom-carousel .carousel-item img {
     height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-size {
+    height: 300px;
+    width: 300px;
   }
 }
