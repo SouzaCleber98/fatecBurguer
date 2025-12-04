@@ -1,0 +1,250 @@
+/* ======== Custom Variables ======== */
+:root {
+  --primary-color: rgb(157, 202, 235);
+  --secondary-bg-color: rgba(214, 204, 204, 0.9);
+  --hover-color: rgb(141, 209, 209);
+  --background-image: url("../assets/images/fatecDay.jpg");
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+  --primary-color: rgb(38, 5, 129);
+  --secondary-bg-color: rgba(39, 35, 35, 0.9);
+  --hover-color: rgb(38, 60, 129);
+  --background-image: url("../assets/images/fatecNight.jpg");
+}
+
+/* ======== Custom Background Classes ======== */
+.bg-secondary-custom {
+  background-color: var(--secondary-bg-color) !important;
+}
+
+.bg-primary-custom {
+  background-color: var(--primary-color) !important;
+}
+
+/* ======== Logo Specific Styles ======== */
+.logo-image {
+  width: 50px;
+  transition: transform 0.7s ease;
+}
+
+.logo-image:hover {
+  transform: scale(1.1) rotate(360deg);
+}
+
+/* ======== Global Styles ======== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding-top: 80px;
+  min-height: 100vh;
+}
+
+/* Dark Mode Body */
+body.dark-mode {
+  background-color: #1a1a2e;
+  color: #e0e0e0;
+}
+
+/* ======== Bootstrap Overrides for Dark Mode ======== */
+body.dark-mode .navbar {
+  background-color: var(--primary-color) !important;
+}
+
+body.dark-mode .card {
+  background-color: rgba(39, 35, 35, 0.95);
+  color: #e0e0e0;
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  background-color: rgba(39, 35, 35, 0.95);
+  color: #e0e0e0;
+  border-color: var(--primary-color);
+}
+
+body.dark-mode .form-control:focus,
+body.dark-mode .form-select:focus {
+  background-color: rgba(39, 35, 35, 0.95);
+  color: #e0e0e0;
+  border-color: var(--hover-color);
+  box-shadow: 0 0 0 0.25rem rgba(38, 60, 129, 0.25);
+}
+
+/* ======== Custom Navbar Styles ======== */
+.custom-navbar {
+  background-color: var(--primary-color) !important;
+}
+
+.custom-navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-family: "Indie Flower", cursive;
+  font-size: 1.5rem;
+  color: #111 !important;
+}
+
+body.dark-mode .custom-navbar .navbar-brand {
+  color: #e0e0e0 !important;
+}
+
+.custom-navbar .nav-link-custom {
+  font-size: 1.1rem;
+  color: #111 !important;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .custom-navbar .nav-link-custom {
+  color: #e0e0e0 !important;
+}
+
+.custom-navbar .nav-link-custom:hover {
+  color: var(--hover-color) !important;
+}
+
+.custom-navbar .navbar-toggler {
+  border-color: rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .custom-navbar .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ======== Dark Mode Toggle ======== */
+#darkModeToggle {
+  --size: 60px;
+  --width: 40px;
+  --knob-size: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  height: var(--size);
+  width: var(--width);
+  border-radius: 999px;
+  position: relative;
+}
+
+.dark-toggle-track {
+  display: block;
+  width: var(--width);
+  height: var(--size);
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: calc(var(--width) / 2);
+  position: relative;
+  overflow: visible;
+}
+
+.dark-toggle-knob {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 6px;
+  width: var(--knob-size);
+  height: var(--knob-size);
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  transition: top 0.28s cubic-bezier(0.2, 0.9, 0.2, 1), background 0.25s ease,
+    box-shadow 0.25s ease;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><circle cx='12' cy='12' r='5' fill='%23FFDD57'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+body.dark-mode .dark-toggle-knob {
+  top: calc(100% - var(--knob-size) - 6px);
+  background: #222;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%239BD1FF' d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'/></svg>");
+}
+
+/* ======== Banner Specific Styles ======== */
+.banner-border-custom {
+  border-color: var(--primary-color) !important;
+}
+
+.banner-title {
+  font-family: "Indie Flower", cursive;
+}
+
+.btn-banner {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: #111 !important;
+}
+
+.btn-banner:hover {
+  background-color: var(--hover-color) !important;
+  border-color: var(--hover-color) !important;
+}
+
+body.dark-mode .btn-banner {
+  color: #e0e0e0 !important;
+}
+
+/* ======== Carousel Styles ======== */
+.carousel-size {
+  height: 400px;
+  width: 400px;
+}
+
+/* ======== Product Card Styles ======== */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid var(--primary-color);
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+  height: 200px;
+  object-fit: cover;
+}
+
+/* ======== Page Sections ======== */
+
+.sobre-text h2 {
+  border-bottom: 2px solid #006900;
+}
+
+/* ======== Responsive Styles ======== */
+@media (max-width: 992px) {
+  /* Banner responsive styles now handled by Bootstrap breakpoints */
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 60px;
+  }
+
+  .custom-navbar .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .custom-navbar .nav-link-custom {
+    font-size: 1.2rem;
+  }
+
+  .custom-carousel .carousel-item img {
+    height: 250px;
+  }
+}

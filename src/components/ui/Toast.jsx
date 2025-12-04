@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Toast as BootstrapToast, ToastContainer } from "react-bootstrap";
 
 /**
  * Displays a toast notification with the given message.
@@ -8,20 +9,35 @@ import { useEffect, useState } from "react";
  * @param {function} onClose - Callback triggered when the toast disappears.
  */
 function Toast({ message, onClose }) {
-  const [visible, setVisible] = useState(true);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setVisible(false);
+      setShow(false);
       onClose?.();
     }, 3000);
 
     return () => clearTimeout(timer);
   }, [onClose]);
 
-  if (!visible) return null;
-
-  return <div className="toast">{message}</div>;
+  return (
+    <ToastContainer position="bottom-center" className="p-3">
+      <BootstrapToast
+        show={show}
+        onClose={() => {
+          setShow(false);
+          onClose?.();
+        }}
+        autohide
+        delay={3000}
+        bg="dark"
+      >
+        <BootstrapToast.Body className="text-white">
+          {message}
+        </BootstrapToast.Body>
+      </BootstrapToast>
+    </ToastContainer>
+  );
 }
 
 export default Toast;

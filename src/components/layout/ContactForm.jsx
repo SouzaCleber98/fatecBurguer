@@ -1,46 +1,98 @@
-import { useRef } from "react";
-import CancelButton from "../ui/CancelButton";
-import SendButton from "../ui/SendButton";
+import { useRef, useState } from "react";
+import { Form, Button } from "react-bootstrap";
+import Toast from "../ui/Toast";
+import { clearFormFields, handleFormSubmit } from "../../utils/formHelpers";
 
 function ContactForm() {
-    const formRef = useRef(null);
+  const formReference = useRef(null);
+  const [showToast, setShowToast] = useState(false);
 
-    // Função para limpar os campos do formulário
-    const clearForm = () => {
-        if (formRef.current) {
-            formRef.current.reset();
-        }
-    };
+  const onSubmit = (event) => {
+    handleFormSubmit(event, formReference, () => setShowToast(true));
+  };
 
-    return (
-        <form ref={formRef}>
-            <label htmlFor="nome">Nome:</label>
-            <input type="text" id="nome" placeholder="Insira seu nome" />
+  const onCancel = () => {
+    clearFormFields(formReference);
+  };
 
-            <label htmlFor="email">E-mail:</label>
-            <input type="email" id="email" placeholder="nome@email.com" />
+  return (
+    <>
+      <Form ref={formReference} onSubmit={onSubmit}>
+        <Form.Group className="mb-3" controlId="nome">
+          <Form.Label className="fw-semibold">Nome:</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Insira seu nome"
+            className="rounded-3"
+          />
+        </Form.Group>
 
-            <label htmlFor="telefone">Telefone:</label>
-            <input type="text" id="telefone" placeholder="(00) 00000-0000" />
+        <Form.Group className="mb-3" controlId="email">
+          <Form.Label className="fw-semibold">E-mail:</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="nome@email.com"
+            className="rounded-3"
+          />
+        </Form.Group>
 
-            <label htmlFor="assunto">Assunto:</label>
-            <select id="assunto">
-                <option>Escolha uma opção</option>
-                <option>Contato</option>
-                <option>Dúvidas</option>
-                <option>Problemas na compra</option>
-                <option>Sugestões</option>
-            </select>
+        <Form.Group className="mb-3" controlId="telefone">
+          <Form.Label className="fw-semibold">Telefone:</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="(00) 00000-0000"
+            className="rounded-3"
+          />
+        </Form.Group>
 
-            <label htmlFor="mensagem">Mensagem:</label>
-            <textarea id="mensagem" placeholder="Insira sua mensagem"></textarea>
+        <Form.Group className="mb-3" controlId="assunto">
+          <Form.Label className="fw-semibold">Assunto:</Form.Label>
+          <Form.Select className="rounded-3">
+            <option>Escolha uma opção</option>
+            <option>Contato</option>
+            <option>Dúvidas</option>
+            <option>Problemas na compra</option>
+            <option>Sugestões</option>
+          </Form.Select>
+        </Form.Group>
 
-            <div className="buttons">
-                <CancelButton callbackFunction={clearForm} />
-                <SendButton callbackFunction={clearForm} />
-            </div>
-        </form>
-    );
+        <Form.Group className="mb-3" controlId="mensagem">
+          <Form.Label className="fw-semibold">Mensagem:</Form.Label>
+          <Form.Control
+            as="textarea"
+            rows={4}
+            placeholder="Insira sua mensagem"
+            className="rounded-3"
+          />
+        </Form.Group>
+
+        <div className="d-flex justify-content-between gap-3">
+          <Button
+            variant="danger"
+            type="button"
+            onClick={onCancel}
+            className="rounded-3 px-4 py-2 fw-semibold"
+          >
+            Cancelar
+          </Button>
+          <Button
+            variant="success"
+            type="submit"
+            className="rounded-3 px-4 py-2 fw-semibold"
+          >
+            Enviar
+          </Button>
+        </div>
+      </Form>
+
+      {showToast && (
+        <Toast
+          message="Mensagem enviada com sucesso!"
+          onClose={() => setShowToast(false)}
+        />
+      )}
+    </>
+  );
 }
 
 export default ContactForm;
