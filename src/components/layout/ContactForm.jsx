@@ -71,14 +71,14 @@ function ContactForm() {
             variant="danger"
             type="button"
             onClick={onCancel}
-            className="rounded-3 px-4 py-2 fw-semibold"
+            className="rounded-3 px-2 py-1 px-md-4 py-md-2"
           >
             Cancelar
           </Button>
           <Button
             variant="success"
             type="submit"
-            className="rounded-3 px-4 py-2 fw-semibold"
+            className="rounded-3 px-2 py-1 px-md-4 py-md-2"
           >
             Enviar
           </Button>

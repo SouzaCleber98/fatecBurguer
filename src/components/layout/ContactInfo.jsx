@@ -1,6 +1,6 @@
 function ContactInfo() {
   return (
-    <div className="contato-info">
+    <div className="text-center">
       <h2>Informações de Contato</h2>
       <p>
         <strong>Telefone:</strong> (00) 00000-0000 - (11) 11111-1111

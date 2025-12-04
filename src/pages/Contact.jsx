@@ -12,12 +12,12 @@ function Contact() {
   return (
     <Container className="w-75 mx-auto my-4 p-4 bg-secondary-custom rounded-3">
       <Row>
-        <Col lg={6} className="mb-4">
+        <Col lg={12} className="mb-4">
           <ContactInfo />
         </Col>
       </Row>
       <Row>
-        <Col lg={6} className="mb-4">
+        <Col lg={12} className="mb-4">
           <LocationMap />
         </Col>
       </Row>
