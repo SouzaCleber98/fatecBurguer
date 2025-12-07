@@ -1,0 +1,179 @@
+# 🍔 FatecBurger
+
+Um site moderno e responsivo de hamburgueria desenvolvido como projeto acadêmico da FATEC, construído com React e Vite.
+
+![React](https://img.shields.io/badge/React-19.2.0-61dafb.svg)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.8-7952b3.svg)
+
+## 📋 Sobre o Projeto
+
+FatecBurger é uma aplicação web Single Page Application (SPA) que simula o site de uma hamburgueria. O projeto apresenta um design moderno com modo claro/escuro, navegação intuitiva e componentes reutilizáveis.
+
+### ✨ Funcionalidades
+
+- 🏠 **Página Inicial**: Banner atrativo com apresentação da hamburgueria
+- 🍔 **Menu**: Catálogo de produtos com imagens e descrições
+- 📖 **Sobre**: Informações sobre a empresa e história
+- 📞 **Contato**: Formulário de contato e localização no mapa
+- 🌓 **Modo Escuro**: Alternância entre tema claro e escuro
+- 📱 **Design Responsivo**: Interface adaptável para diversos dispositivos
+- 🎨 **Carousel**: Galeria de imagens interativa
+
+## 🛠️ Tecnologias Utilizadas
+
+- **React** 19.2.0 - Biblioteca JavaScript para construção de interfaces
+- **React Router DOM** 7.9.4 - Gerenciamento de rotas
+- **Vite** 7.1.9 - Build tool e dev server
+- **Bootstrap** 5.3.8 - Framework CSS
+- **React Bootstrap** 2.10.10 - Componentes Bootstrap para React
+- **Docker** - Containerização da aplicação
+- **Nginx** - Servidor web para produção
+
+## 📁 Estrutura do Projeto
+
+```
+fatecBurger/
+├── src/
+│   ├── components/
+│   │   ├── layout/          # Componentes de layout
+│   │   │   ├── AboutMain.jsx
+│   │   │   ├── Carousel.jsx
+│   │   │   ├── ContactForm.jsx
+│   │   │   ├── ContactInfo.jsx
+│   │   │   ├── Header.jsx
+│   │   │   └── HomeBanner.jsx
+│   │   └── ui/              # Componentes de UI
+│   │       ├── DarkModeSwitcher.jsx
+│   │       ├── LocationMap.jsx
+│   │       ├── Logo.jsx
+│   │       ├── NavLink.jsx
+│   │       ├── ProductItem.jsx
+│   │       └── Toast.jsx
+│   ├── context/             # Context API
+│   │   └── ThemeContext.jsx
+│   ├── pages/               # Páginas da aplicação
+│   │   ├── About.jsx
+│   │   ├── Contact.jsx
+│   │   ├── Home.jsx
+│   │   └── Menu.jsx
+│   ├── styles/              # Estilos customizados
+│   │   └── custom.css
+│   ├── utils/               # Funções utilitárias
+│   │   └── formHelpers.js
+│   ├── assets/              # Imagens e recursos
+│   │   └── images/
+│   ├── App.jsx              # Componente principal
+│   └── main.jsx             # Ponto de entrada
+├── Dockerfile               # Configuração Docker
+├── nginx.conf               # Configuração Nginx
+├── vite.config.js           # Configuração Vite
+├── package.json             # Dependências do projeto
+└── index.html               # HTML principal
+```
+
+## 🚀 Como Executar o Projeto
+
+### Pré-requisitos
+
+- Node.js (versão 16 ou superior)
+- npm ou yarn
+- Git
+
+### Instalação
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/SouzaCleber98/fatecBurguer.git
+```
+
+2. Acesse o diretório do projeto:
+
+```bash
+cd fatecBurger
+```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+### Executando em Desenvolvimento
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em `http://localhost:5173`
+
+### Build para Produção
+
+```bash
+npm run build
+```
+
+Os arquivos otimizados serão gerados na pasta `dist/`
+
+## 🐳 Docker
+
+### Construir a imagem Docker
+
+```bash
+docker build -t fatecburger .
+```
+
+### Executar o container
+
+```bash
+docker run -p 8080:80 fatecburger
+```
+
+A aplicação estará disponível em `http://localhost:8080`
+
+## 🎨 Componentes Principais
+
+### ThemeContext
+
+Gerencia o estado global do tema (claro/escuro) da aplicação usando Context API.
+
+### Header
+
+Barra de navegação responsiva com links para todas as páginas e alternador de tema.
+
+### DarkModeSwitcher
+
+Componente para alternar entre modo claro e escuro.
+
+### Carousel
+
+Galeria de imagens interativa para exibir fotos da hamburgueria.
+
+### ContactForm
+
+Formulário de contato com validação de campos.
+
+### LocationMap
+
+Mapa de localização integrado para mostrar o endereço da hamburgueria.
+
+## 📱 Páginas
+
+- **Home** (`/`) - Página inicial com banner e destaques
+- **Menu** (`/Menu`) - Cardápio com produtos disponíveis
+- **About** (`/About`) - Informações sobre a hamburgueria
+- **Contact** (`/Contact`) - Formulário de contato e localização
+
+## 👨‍💻 Autor
+
+**Cleber Souza**
+
+- GitHub: [@SouzaCleber98](https://github.com/SouzaCleber98)
+
+## 🎓 Projeto Acadêmico
+
+Desenvolvido como parte do curso de Programação Web da FATEC (Faculdade de Tecnologia do Estado de São Paulo).
+
+---
+
+⭐ Se este projeto foi útil para você, considere dar uma estrela!
