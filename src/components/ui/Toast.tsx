@@ -22,7 +22,7 @@ function Toast({ message, onClose, duration = 3000 }: ToastProps) {
   }, [closeToast, duration]);
 
   return (
-    <ToastContainer position="bottom-center" className="p-3">
+    <ToastContainer position="bottom-center" className="p-3 position-fixed">
       <BootstrapToast show={show} onClose={closeToast} bg="dark">
         <BootstrapToast.Body className="text-white">
           {message}

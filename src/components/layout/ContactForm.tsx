@@ -24,6 +24,7 @@ function ContactForm() {
             type="text"
             placeholder="Insira seu nome"
             className="rounded-3"
+            required
           />
         </Form.Group>
 
@@ -33,6 +34,7 @@ function ContactForm() {
             type="email"
             placeholder="nome@email.com"
             className="rounded-3"
+            required
           />
         </Form.Group>
 
@@ -42,13 +44,14 @@ function ContactForm() {
             type="text"
             placeholder="(00) 00000-0000"
             className="rounded-3"
+            required
           />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="assunto">
           <Form.Label className="fw-semibold">Assunto:</Form.Label>
-          <Form.Select className="rounded-3">
-            <option>Escolha uma opção</option>
+          <Form.Select className="rounded-3" required>
+            <option value="">Escolha uma opção</option>
             <option>Contato</option>
             <option>Dúvidas</option>
             <option>Problemas na compra</option>
