@@ -4,7 +4,12 @@ import { Link } from "react-router-dom";
 import Logo from "../ui/Logo";
 import DarkModeSwitcher from "../ui/DarkModeSwitcher";
 
-const navLinks = [
+interface navLink {
+  href: string;
+  label: string;
+}
+
+const navLinks: navLink[] = [
   { href: "/", label: "Home" },
   { href: "/menu", label: "Cardápio" },
   { href: "/about", label: "Sobre" },

@@ -2,7 +2,18 @@ import { useState } from "react";
 import { Card, Badge, Button } from "react-bootstrap";
 import Toast from "./Toast";
 
-function ProductItem({ img, nome, preco, descricao }) {
+interface ProductItemProps {
+  img: string;
+  nome: string;
+  preco: number;
+  descricao: string;
+}
+
+const formatCurrency = (value: number): string => {
+  return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+};
+
+function ProductItem({ img, nome, preco, descricao }: ProductItemProps) {
   const [showToast, setShowToast] = useState(false);
 
   const handleClick = () => {
@@ -19,7 +30,7 @@ function ProductItem({ img, nome, preco, descricao }) {
           <Card.Text className="flex-grow-1">{descricao}</Card.Text>
           <div className="d-flex justify-content-between align-items-center mt-2">
             <Badge bg="success" className="fs-6 py-2 px-3">
-              {preco}
+              {formatCurrency(preco)}
             </Badge>
             <Button variant="success" size="sm" onClick={handleClick}>
               Comprar

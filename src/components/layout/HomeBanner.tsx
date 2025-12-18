@@ -34,7 +34,7 @@ function HomeBanner() {
               <Button
                 size="lg"
                 className="w-100 py-3 fs-4 fw-bold rounded-3 btn-banner"
-                as={Link}
+                as={Link as any}
                 to="/menu"
               >
                 Cardápio

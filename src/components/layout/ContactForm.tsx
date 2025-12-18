@@ -1,13 +1,13 @@
-import { useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import Toast from "../ui/Toast";
 import { clearFormFields, handleFormSubmit } from "../../utils/formHelpers";
 
 function ContactForm() {
-  const formReference = useRef(null);
+  const formReference = useRef<HTMLFormElement | null>(null);
   const [showToast, setShowToast] = useState(false);
 
-  const onSubmit = (event) => {
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     handleFormSubmit(event, formReference, () => setShowToast(true));
   };
 
