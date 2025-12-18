@@ -1,13 +1,15 @@
 # 🍔 FatecBurger
 
-Um site moderno e responsivo de hamburgueria desenvolvido como projeto acadêmico da FATEC, construído com React e Vite.
+Um site moderno e responsivo de hamburgueria desenvolvido como projeto acadêmico da FATEC, construído com React, TypeScript e Vite.
 
 ![React](https://img.shields.io/badge/React-19.2.0-61dafb.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178c6.svg)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.8-7952b3.svg)
+![Vite](https://img.shields.io/badge/Vite-7.1.9-646cff.svg)
 
 ## 📋 Sobre o Projeto
 
-FatecBurger é uma aplicação web Single Page Application (SPA) que simula o site de uma hamburgueria. O projeto apresenta um design moderno com modo claro/escuro, navegação intuitiva e componentes reutilizáveis.
+FatecBurger é uma aplicação web Single Page Application (SPA) que simula o site de uma hamburgueria. O projeto apresenta um design moderno com modo claro/escuro, navegação intuitiva e componentes reutilizáveis, desenvolvido com TypeScript para maior segurança e produtividade no desenvolvimento.
 
 ### ✨ Funcionalidades
 
@@ -22,8 +24,9 @@ FatecBurger é uma aplicação web Single Page Application (SPA) que simula o si
 ## 🛠️ Tecnologias Utilizadas
 
 - **React** 19.2.0 - Biblioteca JavaScript para construção de interfaces
+- **TypeScript** 5.9.3 - Superset JavaScript com tipagem estática
 - **React Router DOM** 7.9.4 - Gerenciamento de rotas
-- **Vite** 7.1.9 - Build tool e dev server
+- **Vite** 7.1.9 - Build tool e dev server ultrarrápido
 - **Bootstrap** 5.3.8 - Framework CSS
 - **React Bootstrap** 2.10.10 - Componentes Bootstrap para React
 - **Docker** - Containerização da aplicação
@@ -36,36 +39,37 @@ fatecBurger/
 ├── src/
 │   ├── components/
 │   │   ├── layout/          # Componentes de layout
-│   │   │   ├── AboutMain.jsx
-│   │   │   ├── Carousel.jsx
-│   │   │   ├── ContactForm.jsx
-│   │   │   ├── ContactInfo.jsx
-│   │   │   ├── Header.jsx
-│   │   │   └── HomeBanner.jsx
+│   │   │   ├── AboutMain.tsx
+│   │   │   ├── Carousel.tsx
+│   │   │   ├── ContactForm.tsx
+│   │   │   ├── ContactInfo.tsx
+│   │   │   ├── Header.tsx
+│   │   │   └── HomeBanner.tsx
 │   │   └── ui/              # Componentes de UI
-│   │       ├── DarkModeSwitcher.jsx
-│   │       ├── LocationMap.jsx
-│   │       ├── Logo.jsx
-│   │       ├── NavLink.jsx
-│   │       ├── ProductItem.jsx
-│   │       └── Toast.jsx
+│   │       ├── DarkModeSwitcher.tsx
+│   │       ├── LocationMap.tsx
+│   │       ├── Logo.tsx
+│   │       ├── NavLink.tsx
+│   │       ├── ProductItem.tsx
+│   │       └── Toast.tsx
 │   ├── context/             # Context API
-│   │   └── ThemeContext.jsx
+│   │   └── ThemeContext.tsx
 │   ├── pages/               # Páginas da aplicação
-│   │   ├── About.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Home.jsx
-│   │   └── Menu.jsx
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── Home.tsx
+│   │   └── Menu.tsx
 │   ├── styles/              # Estilos customizados
 │   │   └── custom.css
 │   ├── utils/               # Funções utilitárias
-│   │   └── formHelpers.js
+│   │   └── formHelpers.ts
 │   ├── assets/              # Imagens e recursos
 │   │   └── images/
-│   ├── App.jsx              # Componente principal
-│   └── main.jsx             # Ponto de entrada
+│   ├── App.tsx              # Componente principal
+│   └── main.tsx             # Ponto de entrada
 ├── Dockerfile               # Configuração Docker
 ├── nginx.conf               # Configuração Nginx
+├── tsconfig.json            # Configuração TypeScript
 ├── vite.config.js           # Configuração Vite
 ├── package.json             # Dependências do projeto
 └── index.html               # HTML principal
@@ -75,7 +79,7 @@ fatecBurger/
 
 ### Pré-requisitos
 
-- Node.js (versão 16 ou superior)
+- Node.js (versão 18 ou superior)
 - npm ou yarn
 - Git
 
@@ -90,7 +94,7 @@ git clone https://github.com/SouzaCleber98/fatecBurguer.git
 2. Acesse o diretório do projeto:
 
 ```bash
-cd fatecBurger
+cd fatecBurguer
 ```
 
 3. Instale as dependências:
@@ -173,6 +177,14 @@ Mapa de localização integrado para mostrar o endereço da hamburgueria.
 ## 🎓 Projeto Acadêmico
 
 Desenvolvido como parte do curso de Programação Web da FATEC (Faculdade de Tecnologia do Estado de São Paulo).
+
+### 📚 Conceitos Aplicados
+
+- Single Page Application (SPA)
+- Component-Based Architecture
+- React Hooks (useState, useContext)
+- Context API para gerenciamento de estado
+- TypeScript para type safety
 
 ---
 
