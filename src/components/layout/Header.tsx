@@ -1,19 +1,21 @@
-import { useState } from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import Logo from "../ui/Logo";
-import DarkModeSwitcher from "../ui/DarkModeSwitcher";
+import { useState } from 'react';
+import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import Logo from '../ui/Logo';
+import DarkModeSwitcher from '../ui/DarkModeSwitcher';
 
-interface navLink {
+// ---------- Types ----------
+type navLink = {
   href: string;
   label: string;
-}
+};
+//----------------------------------
 
 const navLinks: navLink[] = [
-  { href: "/", label: "Home" },
-  { href: "/menu", label: "Cardápio" },
-  { href: "/about", label: "Sobre" },
-  { href: "/contact", label: "Contato" },
+  { href: '/', label: 'Home' },
+  { href: '/menu', label: 'Cardápio' },
+  { href: '/about', label: 'Sobre' },
+  { href: '/contact', label: 'Contato' },
 ];
 
 function Header() {

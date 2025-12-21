@@ -1,11 +1,13 @@
-interface Link {
+// ---------- Types ----------
+type Link = {
   href: string;
   label: string;
-}
+};
 
-interface NavLinkProps {
+type NavLinkProps = {
   links: Link[];
-}
+};
+//----------------------------------
 
 function NavLink({ links }: NavLinkProps) {
   const createLinks = links.map((link) => (

@@ -1,23 +1,25 @@
-import { useState } from "react";
-import { Card, Badge, Button } from "react-bootstrap";
-import Toast from "./Toast";
+import { useState } from 'react';
+import { Card, Badge, Button } from 'react-bootstrap';
+import Toast from './Toast';
 
-interface ProductItemProps {
+// ---------- Types ----------
+type ProductItemProps = {
   img: string;
   nome: string;
   preco: number;
   descricao: string;
-}
+};
+//----------------------------------
 
 const formatCurrency = (value: number): string => {
-  return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+  return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 };
 
 function ProductItem({ img, nome, preco, descricao }: ProductItemProps) {
   const [showToast, setShowToast] = useState(false);
 
   const handleClick = () => {
-    if (!confirm("Tem certeza que deseja comprar?")) return;
+    if (!confirm('Tem certeza que deseja comprar?')) return;
     setShowToast(true);
   };
 

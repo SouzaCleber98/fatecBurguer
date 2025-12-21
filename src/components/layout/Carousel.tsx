@@ -1,8 +1,10 @@
-import { Carousel as BootstrapCarousel } from "react-bootstrap";
+import { Carousel as BootstrapCarousel } from 'react-bootstrap';
 
-interface CarouselProps {
+// ---------- Types ----------
+type CarouselProps = {
   images: string[];
-}
+};
+//----------------------------------
 
 function Carousel({ images }: CarouselProps) {
   return (

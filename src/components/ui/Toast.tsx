@@ -1,11 +1,13 @@
-import { useEffect, useState, useCallback } from "react";
-import { Toast as BootstrapToast, ToastContainer } from "react-bootstrap";
+import { useEffect, useState, useCallback } from 'react';
+import { Toast as BootstrapToast, ToastContainer } from 'react-bootstrap';
 
-interface ToastProps {
+// ---------- Types ----------
+type ToastProps = {
   message: string;
   onClose?: () => void;
   duration?: number;
-}
+};
+//----------------------------------
 
 function Toast({ message, onClose, duration = 3000 }: ToastProps) {
   const [show, setShow] = useState(true);
